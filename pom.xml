@@ -212,10 +212,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
-                    <!-- Headless, so no test can open a real window: Mockito construction mocks are
-                         per-thread, and the login dialog is built on the Swing event thread,
-                         where the mock does not reach. On a desktop that meant a real login
-                         window mid-test and a run that never finished. -->
                     <argLine>-Dnet.bytebuddy.experimental=true -Djava.awt.headless=true</argLine>
                 </configuration>
             </plugin>
